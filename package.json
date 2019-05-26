@@ -1,0 +1,15 @@
+{
+  "name": "Amazon",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:wxznb/Amazon.git",
+  "author": "sarusama <ld839183343@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
