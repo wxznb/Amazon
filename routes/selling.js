@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Request = require("request");
+const cheerio = require("cheerio");
 
 const getDomainUrl = "https://d2h8zr0m6mus4x.cloudfront.net/primesignup/package.json";
 const amazonAreaLetters = {
@@ -56,8 +57,17 @@ router.get("/", function (request, responce, next) {
                      domainResponce.statusCode === 200 ) {
                     // let sellingRegExp = new RegExp(/\<div class=\"a-row a-spacing-mini olpOffer\" role=\"row\"\>(\w+)\<\/div\>/, "g");
                     // let shopRexExp = new RegExp();
+                    let $ = cheerio.load(data);
 
-                    responce.send(data);
+                    $("span.a-size-medium.a-text-bold > a").each(function (index, element) {
+                        console.log("item: ", $(element).text());
+                    });
+
+                    // console.log($("span.a-size-medium.a-text-bold"));
+
+                    responce.send({
+                        code: 0
+                    });
                 } else {
                     responce.send(error);
                 }

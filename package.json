@@ -6,6 +6,7 @@
   "author": "sarusama <ld839183343@163.com>",
   "license": "MIT",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.4",
     "request": "^2.88.0"
   },
